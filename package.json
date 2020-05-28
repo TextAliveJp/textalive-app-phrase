@@ -1,8 +1,8 @@
 {
-  "name": "textalive-app-basic",
+  "name": "textalive-app-phrase",
   "private": true,
   "version": "1.0.0",
-  "description": "TextAlive App Framework のシンプルな利用例",
+  "description": "TextAlive App Framework のシンプルな利用例 (フレーズ表示)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TextAliveJp/textalive-app-basic.git"
+    "url": "git+https://github.com/TextAliveJp/textalive-app-phrase.git"
   },
   "keywords": [
     "textalive"
@@ -20,9 +20,9 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TextAliveJp/textalive-app-basic/issues"
+    "url": "https://github.com/TextAliveJp/textalive-app-phrase/issues"
   },
-  "homepage": "https://github.com/TextAliveJp/textalive-app-basic#readme",
+  "homepage": "https://github.com/TextAliveJp/textalive-app-phrase#readme",
   "devDependencies": {
     "del-cli": "^3.0.1",
     "parcel-bundler": "^1.12.4"
