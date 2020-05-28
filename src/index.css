@@ -7,7 +7,10 @@
 }
 
 #container p {
-  padding: 0 3em;
+  font-size: 4vw;
+  padding: 1em;
+  text-align: center;
+  user-select: none;
 }
 
 #media {

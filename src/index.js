@@ -18,10 +18,12 @@ player.addListener({
 const playBtn = document.querySelector("#play");
 const pauseBtn = document.querySelector("#pause");
 const rewindBtn = document.querySelector("#rewind");
+const skipBtn = document.querySelector("#skip");
 const positionEl = document.querySelector("#position strong");
 
 const artistSpan = document.querySelector("#artist span");
 const songSpan = document.querySelector("#song span");
+const phraseEl = document.querySelector("#container p");
 
 function onAppReady(app) {
   if (!app.managed) {
@@ -29,6 +31,7 @@ function onAppReady(app) {
     playBtn.addEventListener("click", () => player.video && player.requestPlay());
     pauseBtn.addEventListener("click", () => player.video && player.requestPause());
     rewindBtn.addEventListener("click", () => player.video && player.requestMediaSeek(0));
+    skipBtn.addEventListener("click", () => player.video && player.requestMediaSeek(player.video.firstPhrase.startTime));
   }
   if (!app.songUrl) {
       player.createFromSongUrl("http://www.youtube.com/watch?v=KdNHFKTKX2s");
@@ -38,8 +41,22 @@ function onAppReady(app) {
 function onVideoReady(v) {
   artistSpan.textContent = player.data.song.artist.name;
   songSpan.textContent = player.data.song.name;
+
+  let p = v.firstPhrase;
+  skipBtn.disabled = !p;
+
+  while (p && p.next) {
+    p.animate = animatePhrase;
+    p = p.next;
+  }
 }
 
 function onThrottledTimeUpdate(position) {
   positionEl.textContent = String(Math.floor(position));
 }
+
+function animatePhrase(now, unit) {
+  if (unit.startTime <= now && unit.endTime > now) {
+    phraseEl.textContent = unit.text;
+  }
+};
