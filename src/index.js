@@ -12,6 +12,7 @@ const player = new Player({
 player.addListener({
   onAppReady,
   onVideoReady,
+  onTimeUpdate,
   onThrottledTimeUpdate
 });
 
@@ -24,6 +25,7 @@ const positionEl = document.querySelector("#position strong");
 const artistSpan = document.querySelector("#artist span");
 const songSpan = document.querySelector("#song span");
 const phraseEl = document.querySelector("#container p");
+const beatbarEl = document.querySelector("#beatbar");
 
 function onAppReady(app) {
   if (!app.managed) {
@@ -49,6 +51,14 @@ function onVideoReady(v) {
     p.animate = animatePhrase;
     p = p.next;
   }
+}
+
+function onTimeUpdate(position) {
+  const beat = player.findBeat(position);
+  if (!beat) {
+    return;
+  }
+  beatbarEl.style.width = `${Math.ceil(beat.progress(position) * 100)}%`;
 }
 
 function onThrottledTimeUpdate(position) {
