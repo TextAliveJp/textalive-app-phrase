@@ -75,4 +75,4 @@ module.exports=function(n){return new Promise(function(e,o){var r=document.creat
 },{}],0:[function(require,module,exports) {
 var b=require("TUK3");b.register("js",require("Yi9z"));
 },{}]},{},[0,"Focm"], null)
-//# sourceMappingURL=/textalive-app-basic/src.591821f1.js.map
+//# sourceMappingURL=/textalive-app-phrase/src.591821f1.js.map
