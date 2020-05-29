@@ -1,3 +1,8 @@
+// TextAlive App Framework basic example
+// https://github.com/TextAliveJp/textalive-app-phrase
+
+// see also: https://github.com/TextAliveJp/textalive-app-basic
+
 import { Player } from "textalive-api";
 
 const player = new Player({
@@ -47,6 +52,7 @@ function onVideoReady(v) {
   let p = v.firstPhrase;
   skipBtn.disabled = !p;
 
+  // set `animate` method
   while (p && p.next) {
     p.animate = animatePhrase;
     p = p.next;
@@ -54,6 +60,8 @@ function onVideoReady(v) {
 }
 
 function onTimeUpdate(position) {
+
+  // show beatbar
   const beat = player.findBeat(position);
   if (!beat) {
     return;
@@ -66,6 +74,8 @@ function onThrottledTimeUpdate(position) {
 }
 
 function animatePhrase(now, unit) {
+
+  // show current phrase
   if (unit.startTime <= now && unit.endTime > now) {
     phraseEl.textContent = unit.text;
   }
