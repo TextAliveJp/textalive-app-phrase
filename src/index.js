@@ -1,4 +1,4 @@
-// TextAlive App Framework basic example
+// TextAlive App API basic example
 // https://github.com/TextAliveJp/textalive-app-phrase
 
 // see also: https://github.com/TextAliveJp/textalive-app-basic
