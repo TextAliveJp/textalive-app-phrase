@@ -2,13 +2,12 @@
   "name": "textalive-app-phrase",
   "private": true,
   "version": "1.0.0",
-  "description": "TextAlive App Framework のシンプルな利用例 (フレーズ表示)",
+  "description": "発声中のフレーズと現在のビートの情報を表示する TextAlive App API のシンプルな作例",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html --out-dir tmp",
-    "build": "parcel build src/index.html --out-dir docs --public-url /textalive-app-phrase",
-    "clean": "del-cli tmp docs"
+    "dev": "parcel src/index.html --out-dir dev",
+    "build": "parcel build src/index.html --public-url ./ --out-dir docs --no-source-maps",
+    "clean": "del-cli .cache dev docs"
   },
   "repository": {
     "type": "git",
@@ -23,11 +22,12 @@
     "url": "https://github.com/TextAliveJp/textalive-app-phrase/issues"
   },
   "homepage": "https://github.com/TextAliveJp/textalive-app-phrase#readme",
+  "dependencies": {
+    "textalive-app-api": "^0.1.1"
+  },
   "devDependencies": {
     "del-cli": "^3.0.1",
-    "parcel-bundler": "^1.12.4"
-  },
-  "dependencies": {
-    "textalive-app-api": "0.0.4"
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-clean-dist": "0.0.6"
   }
 }

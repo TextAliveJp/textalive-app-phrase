@@ -1,7 +1,8 @@
 <html>
   <head>
-    <title>TextAlive App API | basic example</title>
+    <title>TextAlive App API | phrase example</title>
     <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <div id="content">
@@ -19,10 +20,10 @@
         </div>
       </div>
       <div id="control" style="display: none;">
-        <button id="play">再生</button>
-        <button id="pause">一時停止</button>
-        <button id="rewind">巻き戻し</button>
-        <button id="skip" disabled>歌詞頭出し</button>
+        <button id="play" disabled>再生</button>
+        <button id="jump" disabled>歌詞頭出し</button>
+        <button id="pause" disabled>一時停止</button>
+        <button id="rewind" disabled>巻き戻し</button>
         <span id="position"><strong>-</strong> [ms]</span>
       </div>
     </div>
