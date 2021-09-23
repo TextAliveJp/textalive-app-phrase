@@ -13,8 +13,8 @@ import { Player, Ease } from "textalive-app-api";
 
 const player = new Player({
   app: {
-    appAuthor: "Jun Kato",
-    appName: "Phrase example"
+    // トークンは https://developer.textalive.jp/profile で取得したものを使う
+    token: "WWvjJHTdwTORGwNI"
   },
   mediaElement: document.querySelector("#media")
 });
